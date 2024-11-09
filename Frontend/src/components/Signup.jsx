@@ -13,7 +13,7 @@ function Signup() {
     <>
       <div className="flex h-screen items-center justify-center">
         <div className="w-[600px]">
-          <div className="modal-box">
+          <div className="modal-box dark:bg-slate-900 dark:text-white">
             <form onSubmit={handleSubmit(onSubmit)} method="dialog">
               {/* if there is a button in form, it will close the modal */}
               <Link
