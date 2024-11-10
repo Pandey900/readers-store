@@ -1,5 +1,6 @@
 import React from "react";
-import banner from "../../public/Banner.jpg.jpg"; // Ensure this path is correct
+import banner from "../../public/Banner.jpg.jpg";
+// Ensure this path is correct
 
 function Banner() {
   return (
@@ -31,7 +32,7 @@ function Banner() {
               <input type="text" className="grow" placeholder="Email" />
             </label>
           </div>
-          <button className="btn mt-6 btn-secondary">Secondary</button>
+          <button className="btn mt-6 btn-secondary">Get Started</button>
         </div>
         <div className="order-1 w-full mt-10 md:w-1/2">
           <div className="relative bg-gray-100 dark:bg-slate-900 p-4 rounded-lg">
