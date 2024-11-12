@@ -11,6 +11,7 @@ app.use(express.json());
 dotenv.config();
 const PORT = process.env.PORT || 4000;
 const MONGO_URI = process.env.MONGODBURI;
+const __dirname = path.resolve();
 
 // Connect To MongoDb
 try {
@@ -27,13 +28,17 @@ app.use("/book", bookRoute);
 app.use("/user", userRoute);
 
 // Deployment
-if (process.env.NODE_ENV === "production") {
-  const dirPath = path.resolve();
-  app.use(express.static(path.join(dirPath, "Frontend/dist")));
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(dirPath, "Frontend", "dist", "index.html"));
-  });
-}
+// if (process.env.NODE_ENV === "production") {
+//   const dirPath = path.resolve();
+//   app.use(express.static(path.join(dirPath, "Frontend/dist")));
+//   app.get("*", (req, res) => {
+//     res.sendFile(path.resolve(dirPath, "Frontend", "dist", "index.html"));
+//   });
+// }
+app.use(express.static(path.join(__dirname, "Frontend/dist")));
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "Frontend", "dist", "index.html"));
+});
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
